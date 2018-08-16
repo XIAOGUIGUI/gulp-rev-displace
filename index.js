@@ -37,14 +37,15 @@ function _getManifestData(file, opts) {
                     isRev = 0;
                     return;
                 }
-                let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' );
-                if (!~[
-                        path.basename(key),
-                        _mapExtnames(path.basename(key), opts)
-                    ].indexOf(cleanReplacement)
-                ) {
-                    isRev = 0;
-                }
+                // 去除文件名的校验
+                // let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' );
+                // if (!~[
+                //         path.basename(key),
+                //         _mapExtnames(path.basename(key), opts)
+                //     ].indexOf(cleanReplacement)
+                // ) {
+                //     isRev = 0;
+                // }
             });
 
             if (isRev) {
